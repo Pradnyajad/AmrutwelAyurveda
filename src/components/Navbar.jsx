@@ -1,9 +1,20 @@
-import React from 'react';
-import { Navbar as BootstrapNavbar, Nav, Container, Form, Button } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Navbar as BootstrapNavbar, Nav, Container, Form, Button, Dropdown } from 'react-bootstrap';
 import { Search } from 'react-bootstrap-icons';
-import logo from '../logo.png'; 
+import { NavLink } from 'react-router-dom'; // Use NavLink for active link styling
+import logo from '../logo.png';
 
 const Navbar = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const location = useLocation(); // track current route
+
+       useEffect(() => {
+       setShowDropdown(false);
+       }, [location.pathname]);
+
+
+
   return (
     <div className="bg-image text-dark vh-100 d-flex flex-column">
       <BootstrapNavbar bg="light" expand="lg" className="shadow-sm px-3">
@@ -22,20 +33,79 @@ const Navbar = () => {
 
           <BootstrapNavbar.Collapse id="navbar-nav">
             <Nav className="ms-auto align-items-center gap-3">
-              <Nav.Link href="#home">About Us</Nav.Link>
-              <Nav.Link href="#product">Treatments</Nav.Link>
-              <Nav.Link href="#services">Product & Services</Nav.Link>
-              <Nav.Link href="#contact">Facilities</Nav.Link>
-              <Nav.Link href="#contact">Contact</Nav.Link>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown">
-                  English
-                </a>
-                <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="/">French</a></li>
-                  <li><a className="dropdown-item" href="/">Spanish</a></li>
-                </ul>
-              </li>
+              {/* About Us link */}
+              <Nav.Link as={NavLink} to="/" end className={({ isActive }) => (isActive ? "active-link" : "")}>
+                About Us
+              </Nav.Link>
+
+              {/* Treatments dropdown with hover effect */}
+              <Nav.Item
+  onMouseEnter={() => setShowDropdown(true)}
+  onMouseLeave={() => setShowDropdown(false)}
+  className="position-relative"
+>
+  <Nav.Link
+    as="div"
+    onClick={() => setShowDropdown(!showDropdown)}
+    style={{ cursor: 'pointer' }}
+  >
+    Treatments
+  </Nav.Link>
+
+    {showDropdown && (
+    <div className="submenu bg-white shadow p-2 rounded position-absolute z-3">
+      <Nav.Link as={NavLink} to="/online-ayurveda-consultation" className={({ isActive }) => (isActive ? "active-link" : "")}>
+        Online Ayurveda Consultation For OP
+      </Nav.Link>
+      <Nav.Link as={NavLink} to="/panchakarma-treatment" className={({ isActive }) => (isActive ? "active-link" : "")}>
+        Panchakarma Treatment
+      </Nav.Link>
+      <Nav.Link as={NavLink} to="/yoga-and-meditation" className={({ isActive }) => (isActive ? "active-link" : "")}>
+        Yoga and Meditation
+      </Nav.Link>
+    </div>
+  )}
+
+</Nav.Item>
+
+
+              {/* Product & Services */}
+              <Nav.Link as={NavLink} to="/products" className={({ isActive }) => (isActive ? "active-link" : "")}>
+                Product & Services
+              </Nav.Link>
+
+              {/* Facilities link */}
+              <Nav.Link as={NavLink} to="/facilities" className={({ isActive }) => (isActive ? "active-link" : "")}>
+                Facilities
+              </Nav.Link>
+
+              {/* Contact link */}
+              <Nav.Link as={NavLink} to="/contact" className={({ isActive }) => (isActive ? "active-link" : "")}>
+                Contact
+              </Nav.Link>
+
+              {/* Language Dropdown */}
+              <Dropdown>
+  <Dropdown.Toggle
+    variant="link"
+    className="nav-link"
+    id="language-dropdown"
+  >
+    English
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item as={NavLink} to="/french">
+      French
+    </Dropdown.Item>
+    <Dropdown.Item as={NavLink} to="/spanish">
+      Spanish
+    </Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+
+
+              {/* Search Icon */}
               <Form className="d-flex">
                 <Search size={20} style={{ cursor: 'pointer', marginTop: '8px' }} />
               </Form>
@@ -52,18 +122,20 @@ const Navbar = () => {
         <p className="lead text-white">
           Discover the Ancient Secrets of Ayurveda for a Healthier You
         </p>
-        <div className="d-flex gap-3 mt-3 flex-wrap">
-          <Button variant="success">Book Now</Button>
+        <div className="d-flex gap-3 mt-3 flex-nowrap">
+          <Button variant="success" style={{ minWidth: '150px' }}>
+            About Us
+          </Button>
           <Button
-  style={{
-    color: 'white',
-    borderColor: 'white',
-    backgroundColor: 'transparent'
-  }}
->
-  View all Services
-</Button>
-
+            style={{
+              minWidth: '150px',
+              color: 'white',
+              borderColor: 'white',
+              backgroundColor: 'transparent'
+            }}
+          >
+            View all Services
+          </Button>
         </div>
       </div>
     </div>

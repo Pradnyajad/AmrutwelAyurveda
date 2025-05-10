@@ -15,12 +15,12 @@ function Services() {
       <Container>
         <Row className="mb-5">
           <Col md={6}>
-          <h5>Our Services</h5>
+            <h5>Our Services</h5>
             <h2>Amazing tranquility in our<br />ayurveda retreats</h2>
           </Col>
           <Col md={6}>
             <p>
-              At Tharavad Ayurveda Retreat, we offer a wide range of comprehensive treatments tailored to meet your specific needs. 
+              At Amrutwel Ayurveda Retreat, we offer a wide range of comprehensive treatments tailored to meet your specific needs. 
               Our expert practitioners excel in the art of Panchakarma, an ancient Ayurvedic therapy that detoxifies and revitalizes the body, 
               promoting both physical and emotional well-being.
             </p>
@@ -29,16 +29,22 @@ function Services() {
             </p>
           </Col>
         </Row>
-        <Row>
-          {services.map((service, index) => (
-            <Col md={3} key={index} className="service-card">
-              <div className="service-icon">{service.icon}</div>
-              <div className="service-title">{service.title}</div>
-              <div className="read-more">→</div>
-            </Col>
-          ))}
-        </Row>
       </Container>
+
+      {/* Full-width background image section */}
+      <div className="services-cards-wrapper">
+        <Container fluid>
+          <div className="services-scroll-container">
+            {services.map((service, index) => (
+              <div key={index} className="service-card">
+                <div className="service-icon">{service.icon}</div>
+                <div className="service-title">{service.title}</div>
+                
+              </div>
+            ))}
+          </div>
+        </Container>
+      </div>
     </section>
   );
 }

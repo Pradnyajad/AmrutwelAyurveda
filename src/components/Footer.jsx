@@ -16,17 +16,17 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="mt-5" style={{ backgroundColor: '#eae5d9', color: '#000', padding: '40px 0' }}>
+    <footer style={{ backgroundColor: '#eae5d9', color: '#000', padding: '40px 0' }}>
       <Container>
   <Row className="mb-4 align-items-start">
     {/* Left Column with Logo & Contact */}
     <Col md={3} className="mb-4 mb-md-0">
-      <img src={logofooter} alt="Amrutwel Ayurveda" style={{ height: 60 }} />
+      <img src={logofooter} alt="Amrutwel Ayurveda" style={{ height: 150 }} />
       <ul className="list-unstyled mt-3" style={{ lineHeight: '2' }}>
         <li><FontAwesomeIcon icon={faMapMarkerAlt} /> Address</li>
         <li><FontAwesomeIcon icon={faPhone} /> Contact No.</li>
         <li><FontAwesomeIcon icon={faEnvelope} /> Email</li>
-        <li><FontAwesomeIcon icon={faLinkedinIn}/>Linkedin</li>
+        <li><FontAwesomeIcon icon={faLinkedinIn}/> Linkedin</li>
       </ul>
     </Col>
 

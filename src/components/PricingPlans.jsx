@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const plans = [
   {
     title: "BASIC WELLNESS PLAN",
@@ -23,7 +24,7 @@ const plans = [
       "1 Herbal Therapy Session",
       "Basic Detox Recommendations"
     ],
-    buttonStyle: "success"
+    buttonStyle: "outline-success"
   },
   {
     title: "COMPLETE REJUVENATION PLAN",
@@ -46,20 +47,24 @@ const PricingPlans = () => {
       <h2 className="title">CHOOSE FROM OUR LOWEST<br />PLANS AND PRICES</h2>
 
       <div className="container mt-4">
-        <div className="row justify-content-center">
+        <div className="row row-overflow">
           {plans.map((plan, idx) => (
-            <div key={idx} className="col-md-4 mb-4">
-              <div className="card pricing-card" style={{height: '600px'}}>
-                <div className="card-body">
-                  <h5 className="card-title fw-bold">{plan.title}</h5>
-                  <div className="price-box my-5">
-                    <h4 className="mb-0 text-white">{plan.price} <small className="fs-5">/{plan.type}</small></h4>
+            <div key={idx} className="col-12 col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
+              <div className="card pricing-card w-100">
+                <div className="card-body d-flex flex-column justify-content-between">
+                  <div>
+                    <h5 className="card-title fw-bold">{plan.title}</h5>
+                    <div className="price-box my-4 mx-auto">
+                      <h4 className="mb-0 text-white">{plan.price} <small className="fs-6">/{plan.type}</small></h4>
+                    </div>
+                    <div className='text-center'>
+                      <ul className="list-unstyled feature-list">
+                      {plan.features.map((feature, i) => (
+                        <li key={i}>• {feature}</li>
+                      ))}
+                    </ul>
+                    </div>
                   </div>
-                  <ul className="list-unstyled feature-list">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className='text-center'>• {feature}</li>
-                    ))}
-                  </ul>
                   <button className={`btn btn-${plan.buttonStyle} mt-3`}>Book Now</button>
                 </div>
               </div>

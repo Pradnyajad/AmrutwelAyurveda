@@ -26,7 +26,7 @@ const packages = [
 
 export default function AyurvedaPackages() {
   return (
-    <div className="container text-center my-5">
+    <div className="container text-center custom-top-margin">
       <h6 className="text-uppercase text-muted">Ayurveda Wellness & Relaxation</h6>
       <h2 className="mb-5">Our Packages</h2>
       <div className="row">
