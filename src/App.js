@@ -22,7 +22,7 @@ function App() {
       <Routes>
         {/* Default route renders all components */}
         <Route 
-          path="/AyurvedaWebsite" 
+          path="/" 
           element={
             <>
               <AboutAmrutwel />

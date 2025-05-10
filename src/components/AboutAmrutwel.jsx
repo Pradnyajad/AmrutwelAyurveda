@@ -27,10 +27,12 @@ const AboutAmrutwel = () => {
           <p className="about-text">
             At Amrutwel Ayurveda, we believe in the timeless wisdom of Ayurveda to restore balance and promote holistic well-being.
             Rooted in ancient traditions, our treatments combine authentic herbal remedies, personalized therapies, and expert guidance
-            to help you achieve a healthier, more harmonious life.
+            to help you achieve a healthier, more harmonious life. 
           </p>
-          <div className="button-group d-flex gap-2">
-            <Button variant="" style={{backgroundColor: '#ffffff',color: '#4a613a', borderColor: '#4a613a', width: '120px'}}>About Us</Button>
+            <div className="d-flex gap-3 mt-3 flex-nowrap">
+                      <Button variant="success" style={{ minWidth: '80'}}>
+                        About Us
+                      </Button>
             <Button variant="link" style={{color: '#4a613a'}}className="text-decoration-none">Read more →</Button>
           </div>
         </Col>
