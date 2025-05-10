@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -72,3 +73,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # AmrutwelAyurveda
 >>>>>>> 2d71a82580793ffa0b1c12e88890ec00d0bd2b4b
+=======
+# AmrutwelAyurveda
+>>>>>>> 38ea2a7a671ca4cf094605e65faf5118829e50e3
