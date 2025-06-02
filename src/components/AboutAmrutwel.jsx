@@ -1,20 +1,27 @@
 import React from 'react';
 import { Container, Row, Col, Button, Image } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import About1 from '../About1.jpg';
 import About2 from '../About2.jpg';
 import About3 from '../About3.jpg';
 import About4 from '../About4.jpg';
 
 const AboutAmrutwel = () => {
+  const navigate = useNavigate();
+
+  const handleAboutUsClick = () => {
+    navigate('/about-us');  // Replace '/about-us' with the desired route
+  };
+
   return (
     <Container fluid className="about-section py-5 px-md-5">
       <Row>
         {/* Left Section: Images */}
         <Col md={6} className=" d-flex flex-wrap justify-content-center ">
           <div className="image-container">
-            <Image src={About1} className="image image1"/>
-            <Image src={About2} className="image image2"/>
-            <Image src={About3} className="image image3"/>
+            <Image src={About1} className="image image1" />
+            <Image src={About2} className="image image2" />
+            <Image src={About3} className="image image3" />
           </div>
         </Col>
 
@@ -27,13 +34,24 @@ const AboutAmrutwel = () => {
           <p className="about-text">
             At Amrutwel Ayurveda, we believe in the timeless wisdom of Ayurveda to restore balance and promote holistic well-being.
             Rooted in ancient traditions, our treatments combine authentic herbal remedies, personalized therapies, and expert guidance
-            to help you achieve a healthier, more harmonious life. 
+            to help you achieve a healthier, more harmonious life.
           </p>
-            <div className="d-flex gap-3 mt-3 flex-nowrap">
-                      <Button variant="success" style={{ minWidth: '80'}}>
-                        About Us
-                      </Button>
-            <Button variant="link" style={{color: '#4a613a'}}className="text-decoration-none">Read more →</Button>
+          <div className="d-flex gap-3 mt-3 flex-nowrap">
+            <Button
+              variant="success"
+              style={{ minWidth: '80px' }}
+              onClick={handleAboutUsClick}
+            >
+              About Us
+            </Button>
+            <Button
+              variant="link"
+              style={{ color: '#4a613a' }}
+              className="text-decoration-none"
+            >
+              Read more →
+              
+            </Button>
           </div>
         </Col>
       </Row>

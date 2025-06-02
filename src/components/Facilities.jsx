@@ -1,4 +1,3 @@
-// FacilitiesPage.js
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Container, Row, Col, Image } from 'react-bootstrap';
@@ -8,12 +7,14 @@ import Facility2 from '../Facility2.png';
 import Facility3 from '../Facility3.png';
 import Facility4 from '../Facility4.jpg';
 
+// Create a reusable style object for headings
+const headingStyle = { color: '#198754' };
 
 // ----- Facilities Section -----
 const Facilities = () => {
   return (
     <div className="container py-5">
-      <h1 className="text-center mb-4">Facilities</h1>
+      <h1 style={headingStyle} className="text-center mb-4">Facilities</h1>
       <p className="text-center text-muted mb-5">
         At Amrutwel Ayurveda, we believe in the timeless wisdom of Ayurveda to restore balance and promote holistic well-being. 
         Rooted in ancient traditions, our treatments combine authentic herbal remedies, personalized therapies, and expert guidance to help you achieve a healthier, more harmonious life.
@@ -22,55 +23,51 @@ const Facilities = () => {
         richness of the ancient Kerala Amrutwel and the essence of its beauty are carefully adopted and nurtured at the aptly named ‘Amrutwel’.
       </p>
 
-      <h1 className="text-start mb-4">
+      <h1 style={headingStyle} className="text-start mb-4">
         We provide the best Ayurvedic treatment and necessary facilities
       </h1>
 
-    <div className="row">
-  <div className="col-md-6 mb-4">
-    <ul className="list-unstyled">
-      {[
-        'Panchakarma treatments under experienced doctors',
-        'Allopathic doctor available on call',
-        'Physiotherapy therapist available on need basis',
-        'Sprawling Campus of landscaped village greenery',
-        'A/C & Non A/C Rooms, Cottages & Deluxe Cottages',
-        'Natural Pool'
-      ].map((text, index) => (
-        <li key={index} className="custom-bullet mb-2">
-          <span className="me-2">›</span>
-          <span>{text}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
+      <div className="row">
+        <div className="col-md-6 mb-4">
+          <ul className="list-unstyled">
+            {[
+              'Panchakarma treatments under experienced doctors',
+              'Allopathic doctor available on call',
+              'Physiotherapy therapist available on need basis',
+              'Sprawling Campus of landscaped village greenery',
+              'A/C & Non A/C Rooms, Cottages & Deluxe Cottages',
+              'Natural Pool'
+            ].map((text, index) => (
+              <li key={index} className="custom-bullet mb-2">
+                <span className="me-2">›</span>
+                <span>{text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-  <div className="col-md-6 mb-4">
-    <ul className="list-unstyled">
-      {[
-        'Reading cum Recreation center',
-        'Internet Facility',
-        'Yoga Classes',
-        'Ayurvedic Food',
-        'Library'
-      ].map((text, index) => (
-        <li key={index} className="custom-bullet mb-2">
-          <span className="me-2">›</span>
-          <span>{text}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-</div>
-
-
+        <div className="col-md-6 mb-4">
+          <ul className="list-unstyled">
+            {[
+              'Reading cum Recreation center',
+              'Internet Facility',
+              'Yoga Classes',
+              'Ayurvedic Food',
+              'Library'
+            ].map((text, index) => (
+              <li key={index} className="custom-bullet mb-2">
+                <span className="me-2">›</span>
+                <span>{text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
 
 // ----- Gallery Section -----
-
-
 const FacilitiesAmenitiesGallery = ({ images }) => {
   const [show, setShow] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -101,7 +98,7 @@ const FacilitiesAmenitiesGallery = ({ images }) => {
     <Container className="mt-5">
       <Row className="mb-4 text-center">
         <Col>
-          <h2>Facilities & Amenities</h2>
+          <h2 style={headingStyle}>Facilities & Amenities</h2>
           <p className="lead">Offering our guests an unforgettable experience</p>
         </Col>
       </Row>
@@ -170,26 +167,25 @@ const FacilitiesAmenitiesGallery = ({ images }) => {
   );
 };
 
-
 // ----- Main Component -----
 function FacilitiesPage() {
   const facilityImages = [
     {
-        thumbnail: Facility1,
-        full: Facility1,
+      thumbnail: Facility1,
+      full: Facility1,
     },
     {
-        thumbnail: Facility2,
-        full: Facility2,
-      },
-      {
-        thumbnail: Facility3,
-        full: Facility3,
-      },
-      {
-        thumbnail: Facility4,
-        full: Facility4,
-      },
+      thumbnail: Facility2,
+      full: Facility2,
+    },
+    {
+      thumbnail: Facility3,
+      full: Facility3,
+    },
+    {
+      thumbnail: Facility4,
+      full: Facility4,
+    },
   ];
 
   return (

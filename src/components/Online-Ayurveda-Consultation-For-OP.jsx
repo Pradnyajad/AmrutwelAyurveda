@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom';
 const OnlineAyurvedaConsultation = () => {
   return (
     <div className="container mt-5">
-      <h1 className="text-3xl font-bold text-center mb-4">
+      <h1
+        className="text-3xl font-bold text-center mb-4"
+        style={{ color: '#198754' }}
+      >
         Online Ayurveda Consultation for OP
       </h1>
 

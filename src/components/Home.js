@@ -1,7 +1,23 @@
-import React from 'react'
+import React from 'react';
+import AboutAmrutwel from './AboutAmrutwel';
+import Services from './Services';
+import Products from './Products';
+import PricingPlans from './PricingPlans';
+import OurPackages from './OurPackages';
+import Contact from './Contact';
 
-export const Home = () => {
+const Home = () => {
   return (
-    <div>This is Home</div>
-  )
-}
+    <div>
+      {/* Hero section or banner can go here */}
+      <AboutAmrutwel />
+      <Services />
+      <Products />
+      <PricingPlans />
+      <OurPackages />
+      <Contact />
+    </div>
+  );
+};
+
+export default Home;
